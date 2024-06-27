@@ -23,7 +23,7 @@ object
 // const score = 100;
 // const scoreValue = 100.4;
 // const isLoggedIn = false;
-const outsideTemp = null;
+// const outsideTemp = null;
 // let userEmail;
 
 // const id = Symbol('123');
@@ -33,12 +33,33 @@ const outsideTemp = null;
 // const bigNumber = 123456789123456789;
 // console.log(bigNumber);
 
-const heros = [1,2,3,4,5];
-let a={
-    name:"yash",
-    age:12
+// const heros = [1,2,3,4,5];
+// let a={
+//     name:"yash",
+//     age:12
+// };
+// console.log(typeof heros); //object
+// console.log(typeof a); //object
+// console.log(typeof outsideTemp); //object
+
+// Stack Memory (Primitive), Heap (Non-Primitive)
+
+// let c=1;
+
+// let d=c;
+// console.log(d);
+// d=2;
+// console.log(c);
+
+// console.log(d);
+
+let userOne = {
+    a:1,
+    b:2
 };
-console.log(typeof heros); //object
-console.log(typeof a); //object
-console.log(typeof outsideTemp); //object
+let usertwo = userOne;
+usertwo.a=3;
+console.log(userOne.a);
+console.log(usertwo.a);
+
 

@@ -33,13 +33,14 @@
 // console.log(1+2+'2');
 // console.log((3+4)*5%3);
 
-let count = 100;
-y= count++; // Postfix - the increment operator increments and returns the value before incrementing.
+// let count = 100;
+// y= count++; // Postfix - the increment operator increments and returns the value before incrementing.
 
-x = ++count; //Prefix -  the increment operator increments and returns the value after incrementing.
-console.log(count);
-console.log(x);
-console.log(y);
+// x = ++count; //Prefix -  the increment operator increments and returns the value after incrementing.
+// console.log(count);
+// console.log(x);
+// console.log(y);
+
 
 
 
