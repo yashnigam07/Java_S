@@ -40,10 +40,17 @@ for(let i=0; i<=10; i++){
     }
 }
 
-*/
+
 
 a=0;
 while(a<10){
     console.log(`Value${a}`);
     a++;
 }
+ */
+
+let a=0;
+do{
+    console.log(`Value of a ${a}`);
+    a++;
+}while(a<=10);
