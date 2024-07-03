@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body style="background-color: black; color: wheat;">
+    <ul class = "language" style="font-size: 50px;">
+        <li>
+            Javascript
+        </li>
+    </ul>
+    
+</body>
+<script>
+//     function addLanguage(langName){
+//     const li = document.createElement('li');
+//     li.textContent = langName;
+//     document.querySelector('.language').appendChild(li);
+// }
+// addLanguage("python");
+// addLanguage("html");
+
+// ========= Good Approach ========= 
+
+function addOptiLanguage(langName){
+    const li = document.createElement('li');
+    li.appendChild(document.createTextNode(langName))
+    document.querySelector('.language').appendChild(li)
+}
+addOptiLanguage('golang');
+addOptiLanguage('Rust');
+
+// Edit
+
+const secondlang=document.querySelector("li:nth-child(3)");
+// secondlang.innerHTML="Mojo";
+const newli = document.createElement('li');
+newli.textContent = "Mojo";
+secondlang.replaceWith(newli);
+
+// edit
+
+const firstlang = document.querySelector("li:first-child");
+firstlang.outerHTML = '<li>Rust</li>';
+
+//remove
+const lastlang = document.querySelector('li:last-child');
+lastlang.remove();
+
+
+</script>
+</html>
