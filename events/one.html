@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centered Box</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="centered-box" id="box1">
+            <h1 class="heading">Gym Mommy</h1>
+            <p>(Thick thigh wali...).</p>
+        </div>
+        <div class="centered-box" id="box2">
+            <h1 class="heading">Gym Mommy</h1>
+            <p>(Thick thigh wali...).</p>
+        </div>
+    </div>
+</body>
+<script>
+    document.querySelector('#box1').addEventListener('click', function(e) {
+        console.log(e);
+        e.target.remove();
+    });
+</script>
+</html>
