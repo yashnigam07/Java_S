@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lo-Fi GitHub User Card</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #2e2a2f;
+            --card-bg-color: #3e3b45;
+            --btn-primary-color: #6a4c93;
+            --btn-primary-hover-color: #553b6a;
+            --text-light: #f0e6f6;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: var(--bg-color);
+            font-family: 'Arial', sans-serif;
+        }
+
+        .card {
+            width: 18rem;
+            background: var(--card-bg-color);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card-img {
+            object-fit: cover;
+            height: 270px;
+        }
+
+        .card-img-overlay {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            background: rgba(0, 0, 0, 0.4);
+            color: var(--text-light);
+            padding: 20px;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: bold;
+        }
+
+        .card-text {
+            font-size: 0.875rem;
+            margin: 5px 0;
+        }
+
+        .btn-primary {
+            background-color: var(--btn-primary-color);
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--btn-primary-hover-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <img class="card-img" id="profileImage" src="https://via.placeholder.com/100x270" alt="Profile image">
+        <div class="card-img-overlay">
+            <h5 class="card-title" id="userName">Loading...</h5>
+            <p class="card-text" id="userFollowers">Followers: Loading...</p>
+            <p class="card-text" id="lastUpdated">Last updated: ...</p>
+            <a href="https://github.com/hiteshchoudhary" class="btn btn-primary" target="_blank" rel="noopener noreferrer">View Profile</a>
+        </div>
+    </div>
+
+    <script>
+        const requestUrl = 'https://api.github.com/users/hiteshchoudhary';
+
+        fetch(requestUrl)
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('profileImage').src = data.avatar_url;
+                document.getElementById('userName').textContent = data.name || 'No name available';
+                document.getElementById('userFollowers').textContent = `Followers: ${data.followers}`;
+                document.getElementById('lastUpdated').textContent = `Last updated: ${new Date().toLocaleTimeString()}`;
+            })
+            .catch(error => {
+                console.error('Error fetching user data:', error);
+                document.getElementById('userName').textContent = 'Error loading data';
+            });
+    </script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
