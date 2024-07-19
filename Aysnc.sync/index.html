@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Change Background Color</title>
+</head>
+<body>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+
+    <h1>Change my text and background color!</h1>
+
+    <script>
+        const randomcolor = function() {
+            const hex = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += hex[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        };
+
+        let intervalid;  // Declare the intervalid in the outer scope
+        const startChangingColor=function(){
+            if(!intervalid){
+                intervalid = setInterval(changeBgColor,1000);
+            }
+        }
+
+        function startChangingColor() {
+            intervalid = setInterval(changeBgColor, 1000);
+
+            function changeBgColor() {
+                document.body.style.backgroundColor = randomcolor();
+            }
+        }
+
+        const stopChangingColor = function() {
+            clearInterval(intervalid);
+            intervalid = null; 
+             // Clear the interval
+        };
+
+        document.querySelector("#start").addEventListener('click', startChangingColor);
+        document.querySelector("#stop").addEventListener('click', stopChangingColor);
+
+        // Example of changing text after a delay (uncomment if needed)
+        // const changetext = function() {
+        //     document.querySelector('h1').innerHTML = "Let the music wash away the stress of the day.";
+        // };
+        // setTimeout(changetext, 4000);
+
+        // Example of logging the date with an interval (uncomment if needed)
+        // const date = function(str) {
+        //     console.log(str, Date.now());
+        // };
+        // const intervalId = setInterval(date, 1000, "hi");
+        // clearInterval(intervalId);
+    </script>
+</body>
+</html>
