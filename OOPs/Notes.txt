@@ -1,0 +1,21 @@
+# js and classes
+# OOp
+# Object
+- collection of properties and methods
+- toLowerCase
+
+## why use OOp
+
+## parts of OOp
+object literal
+
+- Constructor function
+- Prototypes
+- classes
+- Instancese (new,this)
+
+## 4 pillars
+Abstraction
+Encapsulation
+Inheritance
+polymorphism
